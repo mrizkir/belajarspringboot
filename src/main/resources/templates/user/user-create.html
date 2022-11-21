@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah User</title>
+</head>
+<body>
+  <h1>Tambah User Baru</h1>
+  <form th:action="@{/user/store}" method="post" th:object="${pengguna}"> 
+    <table width="600px">
+      <tr>
+        <td width="150">Username</td>
+        <td>
+          <input type="text" th:field="*{userName}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" th:field="*{password}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="email" th:field="*{email}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td>
+          <input type="text" th:field="*{firstName}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>
+          <input type="text" th:field="*{lastName}" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Role</td>
+        <td>
+          <select th:field="*{role}">
+            <option value="superadmin">Super Admin</option>
+            <option value="dosen">Dosen</option>
+            <option value="mahasiswa">Mahasiswa</option>
+          </select>          
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit">
+            Simpan
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

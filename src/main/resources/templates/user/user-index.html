@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar User</title>
+</head>
+<body>
+  <h2>Daftar User</h2>
+  <a th:href="@{/user/create}">Tambah User</a>
+  <table style="width: 100%">
+    <thead>
+      <tr>
+        <th>NO</th>
+        <th>ID</th>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
+        <th>ROLE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <th:block th:each="user : ${daftar_pengguna}">
+        <tr>
+          <td></td>
+          <td>[[${user.getId()}]]</td>
+          <td>[[${user.getUserName()}]]</td>
+          <td>[[${user.getEmail()}]]</td>
+          <td>[[${user.getRole()}]]</td>
+        </tr>
+      </th:block>
+    </tbody>
+  </table>
+</body>
+</html>
